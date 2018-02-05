@@ -23,6 +23,7 @@ public class FirstTestCase {
      public static void openBrowser(){
 		 System.setProperty("webdriver.gecko.driver","C:\\SeleniumGecko\\geckodriver.exe");	
          driver = new FirefoxDriver();
+         //wait for page to load
          driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		} 
 	 
@@ -39,10 +40,11 @@ public class FirstTestCase {
         
         // Print a Log In message to the screen
         System.out.println("Successfully opened the login page");     
-        
+        //enter email address
 		driver.findElement(By.id("CredIdentifier")).sendKeys("giddy_with_panda@hotmail.com");
-		driver.findElement(By.id("CredPassword")).sendKeys("woaini88!");
-		driver.findElement(By.xpath("//button[@type='submit']")).click();		
+		//enter password
+		driver.findElement(By.id("CredPassword")).sendKeys("woaini88!");		
+		driver.findElement(By.xpath("//button[@type='submit']")).click();	
 		
 		try{
 			 element = driver.findElement (By.cssSelector("a[href='https://www.blocket.se/spid/logout']"));
